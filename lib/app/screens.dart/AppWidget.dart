@@ -20,11 +20,11 @@ class AppWidget extends StatelessWidget {
         body: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            Produto(),
-            Produto(),
-            Produto(),
-            Produto(),
-            Produto(),
+            Cards(),
+            Cards(),
+            Cards(),
+            Cards(),
+            Cards(),
           ],
         ),
       ),

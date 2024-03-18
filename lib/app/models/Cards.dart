@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:loja_app/app/screens.dart/Produtos.dart';
 
-class Produto extends StatelessWidget {
-  const Produto({super.key});
+class Cards extends StatelessWidget {
+  const Cards({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +15,12 @@ class Produto extends StatelessWidget {
               width: 350,
               height: 150,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.black)),
+                image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage("assets/images/evento.jpg")),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.black),
+              ),
               child: Container(
                 child: FloatingActionButton(
                   onPressed: () {},
