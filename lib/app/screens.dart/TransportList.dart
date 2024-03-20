@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:loja_app/app/models/Cards.dart';
-import 'package:loja_app/app/models/tema.dart';
 
-class AppWidget extends StatelessWidget {
-  const AppWidget({
-    super.key,
-  });
+class TransportList extends StatelessWidget {
+  const TransportList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: tema,
       home: Scaffold(
         bottomNavigationBar: NavigationBar(destinations: [
           NavigationDestination(
@@ -22,11 +18,9 @@ class AppWidget extends StatelessWidget {
         body: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            Cards("assets/images/evento.jpg"),
-            Cards("assets/images/evento.jpg"),
-            Cards("assets/images/evento.jpg"),
-            Cards("assets/images/evento.jpg"),
-            Cards("assets/images/evento.jpg"),
+            Cards("assets/images/Transporte.jpeg"),
+            Cards("assets/images/Transporte.jpeg"),
+            Cards("assets/images/Transporte.jpeg"),
           ],
         ),
       ),
