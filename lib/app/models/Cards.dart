@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:loja_app/app/screens.dart/Produtos.dart';
+import 'package:loja_app/app/screens/Produtos.dart';
 
 class Cards extends StatefulWidget {
   String foto;
@@ -36,7 +36,9 @@ class _CardsState extends State<Cards> {
               ),
               child: Container(
                 child: FloatingActionButton.extended(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed('/p');
+                  },
                   label: Text("Eu vou!"),
                 ),
               )),
