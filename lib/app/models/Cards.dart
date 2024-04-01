@@ -32,12 +32,15 @@ class _CardsState extends State<Cards> {
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(10),
                     topLeft: Radius.circular(10)),
-                border: Border.all(color: Colors.black),
+                border: Border.all(color: Colors.blueGrey),
               ),
               child: Container(
                 child: FloatingActionButton.extended(
+                  heroTag: 'evento',
                   onPressed: () {
-                    Navigator.of(context).pushReplacementNamed('/p');
+                    widget.foto == 'assets/images/Transporte.jpeg'
+                        ? Navigator.of(context).pushNamed('/t')
+                        : Navigator.of(context).pushNamed('/p');
                   },
                   label: Text("Eu vou!"),
                 ),
@@ -52,13 +55,14 @@ class _CardsState extends State<Cards> {
                   bottomLeft: Radius.circular(10),
                   bottomRight: Radius.circular(10),
                 ),
-                border: Border.all(color: Colors.black),
+                border: Border.all(color: Colors.blueGrey),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Atraçoes:"),
                   FloatingActionButton.extended(
+                    heroTag: 'extended',
                     onPressed: () {
                       setState(() {
                         toque = !toque;

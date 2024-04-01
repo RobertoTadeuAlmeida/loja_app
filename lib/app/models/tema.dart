@@ -7,12 +7,12 @@ ThemeData tema = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   fontFamily: 'MontserrartAlternates',
   navigationBarTheme: NavigationBarThemeData(
-    backgroundColor: Colors.blueGrey,
-    labelTextStyle: MaterialStateProperty.all(
-      TextStyle(
-        fontFamily: 'MontserratAlternates',
-        color: Colors.white,
+      backgroundColor: Colors.blueGrey,
+      labelTextStyle: MaterialStatePropertyAll(
+        TextStyle(
+          fontFamily: 'MontserratAlternates',
+          color: Colors.white,
+        ),
       ),
-    ),
-  iconTheme: MaterialStatePropertyAll(IconThemeData(color: Colors.white))),
+      iconTheme: MaterialStatePropertyAll(IconThemeData(color: Colors.white))),
 );
