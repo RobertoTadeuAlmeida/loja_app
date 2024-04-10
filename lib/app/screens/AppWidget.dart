@@ -3,6 +3,8 @@ import 'package:loja_app/app/models/Cards.dart';
 import 'package:loja_app/app/models/tema.dart';
 import 'package:loja_app/app/screens/Produtos.dart';
 import 'package:loja_app/app/screens/TransportList.dart';
+import 'package:loja_app/app/screens/home_page.dart';
+import 'package:loja_app/app/screens/produtoList.dart';
 import 'package:loja_app/app/screens/transport.dart';
 
 class AppWidget extends StatelessWidget {
@@ -19,43 +21,54 @@ class AppWidget extends StatelessWidget {
         '/home': (context) => Home_screen(),
         '/p': (context) => Produtos(),
         '/tl': (context) => TransportList(),
-        '/t' : (context) => Transport(),
+        '/t': (context) => Transport(),
+        '/hp': (context) => HomePage(),
       },
     );
   }
 }
 
-class Home_screen extends StatelessWidget {
-  const Home_screen({
+class Home_screen extends StatefulWidget {
+  Home_screen({
     super.key,
   });
 
   @override
+  State<Home_screen> createState() => _Home_screenState();
+}
+
+class _Home_screenState extends State<Home_screen> {
+  int selectedIndex = 0;
+
+  List<Widget> menuList = <Widget>[ProdutoList(), HomePage(),TransportList()];
+
+  void onTapIndex(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: NavigationBar(
-          selectedIndex: 1,
-          destinations: [
-            NavigationDestination(
-              tooltip: '/home',
-              icon: Icon(Icons.event_available),
-              label: "eventos",
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: selectedIndex,
+          onTap: onTapIndex,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.event),
+              label: 'Eventos',
             ),
-            NavigationDestination(
-                tooltip: '/tl', icon: Icon(Icons.home), label: "Home"),
-            NavigationDestination(
-                tooltip: '/p',
-                icon: Icon(Icons.bus_alert_outlined),
-                label: "reservados"),
-          ]),
-      body: ListView(
-        scrollDirection: Axis.vertical,
-        children: [
-          Cards("assets/images/evento.jpg"),
-
-
-        ],
-      ),
-    );
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bus_alert),
+              label: 'Reservados',
+            ),
+          ],
+        ),
+        body: menuList.elementAt(selectedIndex));
   }
 }
