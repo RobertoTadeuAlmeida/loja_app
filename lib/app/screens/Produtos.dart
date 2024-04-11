@@ -11,12 +11,21 @@ class _ProdutosState extends State<Produtos> {
   String foto = "assets/images/evento.jpg";
 
   final ScrollController _scrollController = ScrollController();
+  late PageController pageCtrl = PageController();
+  List<Widget> imageList = [
+    Image.asset("assets/images/evento.jpg"),
+    Image.asset("assets/images/evento.jpg")
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
-        Container(child: Image.asset(foto)),
+        Container(
+            width: 450,
+            height: 250,
+            color: Colors.blueGrey,
+            child: PageView(controller: pageCtrl, children: imageList)),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
@@ -43,10 +52,13 @@ class _ProdutosState extends State<Produtos> {
           children: [
             Text("O evento começa: 01/01/2025"),
             Text("O evento termina: 02/01/2025"),
-            FloatingActionButton.extended(
-              heroTag: 'ingreco',
-              onPressed: () {},
-              label: Text("Adiquira seu ingreço aqui"),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FloatingActionButton.extended(
+                heroTag: 'ingreco',
+                onPressed: () {},
+                label: Text("Adiquira seu ingreço aqui"),
+              ),
             )
           ],
         ),
