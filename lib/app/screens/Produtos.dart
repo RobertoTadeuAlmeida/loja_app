@@ -13,8 +13,8 @@ class _ProdutosState extends State<Produtos> {
   final ScrollController _scrollController = ScrollController();
   late PageController pageCtrl = PageController();
   List<Widget> imageList = [
-    Image.asset("assets/images/evento.jpg"),
-    Image.asset("assets/images/evento.jpg")
+    Image.asset("assets/images/lugar1.jpeg"),
+    Image.asset("assets/images/lugar2.jpeg")
   ];
 
   @override
@@ -68,7 +68,7 @@ class _ProdutosState extends State<Produtos> {
             Navigator.of(context).pushNamed('/tl');
           },
           label: Text("Quero meu transporte"),
-        )
+        ),
       ]),
     );
   }
