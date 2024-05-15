@@ -10,7 +10,33 @@ class CardDao {
   static const String _name = 'nome';
   static const String _foto = 'image';
 
-  save(Cards produto) async {}
+  save(Cards produto) async {
+    print('iniciando save:');
+    final Database database = await getDatabase();
+    var itensExists = await find(produto.name);
+    Map<String, dynamic> cardsMap = toMap(produto);
+    if (itensExists.isEmpty) {
+      print('O produto nao existia');
+      return await database.insert(_tableName, cardsMap);
+    } else {
+      print('A tarefa ja existia');
+      return await database.update(
+        _tableName,
+        cardsMap,
+        where: '$_name = ?',
+        whereArgs: [produto.name],
+      );
+    }
+  }
+
+  Map<String, dynamic> toMap(Cards produto) {
+    print('convertendo produto em map');
+    final Map<String, dynamic> mapaDeProdutos = {};
+    mapaDeProdutos[_name] = produto.name;
+    mapaDeProdutos[_foto] = produto.image;
+    print('mapa de produtos e $mapaDeProdutos');
+    return mapaDeProdutos;
+  }
 
   Future<List<Cards>> findAll() async {
     print('Acessando findAll');

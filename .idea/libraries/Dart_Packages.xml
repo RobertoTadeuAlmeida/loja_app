@@ -149,6 +149,7 @@
             </list>
           </value>
         </entry>
+        <entry key="sqflite">
           <value>
             <list>
               <option value="$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite-2.3.2/lib" />
