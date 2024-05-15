@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loja_app/app/models/Cards.dart';
+import 'package:loja_app/back-end/cardsDAO.dart';
 
 class ProdutoList extends StatefulWidget {
   const ProdutoList({super.key});
@@ -14,7 +15,7 @@ class _State extends State<ProdutoList> {
     return ListView(
       scrollDirection: Axis.vertical,
       children: [
-        Cards('assets/images/evento.jpg'),
+
       ],
     );
   }
