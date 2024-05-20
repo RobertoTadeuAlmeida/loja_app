@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:loja_app/app/back-end/functions.dart';
 import 'package:loja_app/app/screens/Produtos.dart';
+import 'package:loja_app/app/screens/transport.dart';
 
 class Cards extends StatefulWidget {
-  String name;
-  String image;
+  final String name;
+  final String image;
 
-  Cards(this.name, this.image, {super.key});
+  const Cards(this.name, this.image, {super.key});
 
   @override
   State<Cards> createState() => _CardsState();
@@ -14,6 +16,7 @@ class Cards extends StatefulWidget {
 
 class _CardsState extends State<Cards> {
   bool toque = false;
+  late bool textButon = false;
 
   double tamanho = 150;
 
@@ -39,11 +42,23 @@ class _CardsState extends State<Cards> {
                 child: FloatingActionButton.extended(
                   heroTag: 'evento',
                   onPressed: () {
-                    widget.image == 'assets/images/Transporte.jpeg'
-                        ? Navigator.of(context).pushNamed('/t')
-                        : Navigator.of(context).pushNamed('/p');
+                    Functions functions = Functions();
+                    functions.verificPag(widget.image, textButon, context);
+                    // final Transport transporte = Transport();
+                    // print('pagamento ${transporte.pagamento}');
+                    //
+                    // if (!transporte.pagamento) {
+                    //   widget.image == 'assets/images/Transporte.jpeg'
+                    //       ? Navigator.of(context).pushNamed('/t')
+                    //       : Navigator.of(context).pushNamed('/p');
+                    // } else {
+                    //   print('pagamento ${transporte.pagamento}');
+                    //   textButon = true;
+                    //   print(textButon);
+                    // }
+                    // ;
                   },
-                  label: Text("Eu vou!"),
+                  label: Text(textButon ? 'Nao vou mais' : 'Eu vou!'),
                 ),
               )),
           AnimatedContainer(

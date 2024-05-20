@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class Transport extends StatefulWidget {
   Transport({super.key});
 
+  late bool pagamento = false;
+
   @override
   State<Transport> createState() => _TransportState();
 }
 
 class _TransportState extends State<Transport> {
-  String foto = "assets/images/Transporte.jpeg";
+  final String foto = "assets/images/Transporte.jpeg";
 
   final ScrollController _scrollController = ScrollController();
 
@@ -56,8 +58,15 @@ class _TransportState extends State<Transport> {
         ),
         FloatingActionButton.extended(
           heroTag: 'final',
-          onPressed: () {},
-          label: Text("Esse é meu transporte!"),
+          onPressed: () {
+            setState(() {
+              print('Validando pagamento.');
+               widget.pagamento = true;
+              print('pagamento ${widget.pagamento}');
+              Navigator.of(context).pushNamed('/tl');
+            });
+          },
+          label: const Text("Esse é meu transporte!"),
         )
       ]),
     );

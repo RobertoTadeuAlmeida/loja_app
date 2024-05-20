@@ -69,5 +69,10 @@ class CardDao {
     return toList(result);
   }
 
-  delete(String nomeProduto) async {}
+  delete(String nomeProduto) async {
+    print('Deletando produto:');
+    final Database database = await getDatabase();
+    return database
+        .delete(_tableName, where: '$_name = ?', whereArgs: [nomeProduto]);
+  }
 }
