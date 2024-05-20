@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:loja_app/app/back-end/bus.dart';
+import 'package:loja_app/app/back-end/evento.dart';
 import 'package:loja_app/app/back-end/functions.dart';
 import 'package:loja_app/app/screens/Produtos.dart';
 import 'package:loja_app/app/screens/transport.dart';
 
 class Cards extends StatefulWidget {
+  final Evento evento = Evento(
+      'STL Festival',
+      'assets/images/stl.jpg',
+      01062024,
+      02062024,
+      'Emicida convida Rashid e Drik Barbosa; Armandinho; Marcelo Falcão convida Cynthia Luz; Matuê; Planta e Mato; Nando Reis + convidado surpresa; Baco Exu do Blues; Edi Rock convida Dexter.',
+      "São Thomé das Letras / MG",
+      'resumo');
+  final Bus bus = Bus('Comet', 'Jose', 'Marcopolo',
+      'assets/images/busaoBonito.jpg', 51, true, 51);
+
   final String name;
   final String image;
 
-  const Cards(this.name, this.image, {super.key});
+  Cards(this.name, this.image, {super.key});
 
   @override
   State<Cards> createState() => _CardsState();
@@ -44,6 +57,7 @@ class _CardsState extends State<Cards> {
                   onPressed: () {
                     final Functions functions = Functions();
                     functions.verificPag(widget.image, textButton, context);
+                    functions.eventOrBus(widget.evento, widget.bus, context);
                     // final Transport transporte = Transport();
                     // print('pagamento ${transporte.pagamento}');
                     //

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_app/app/back-end/evento.dart';
 
 class Produtos extends StatefulWidget {
   Produtos({super.key});
@@ -6,14 +7,21 @@ class Produtos extends StatefulWidget {
   @override
   State<Produtos> createState() => _ProdutosState();
 }
-
+final Evento evento = Evento(
+    'STL Festival',
+    'assets/images/stl.jpg',
+    01062024,
+    02062024,
+    'Emicida convida Rashid e Drik Barbosa; Armandinho; Marcelo Falcão convida Cynthia Luz; Matuê; Planta e Mato; Nando Reis + convidado surpresa; Baco Exu do Blues; Edi Rock convida Dexter.',
+    "São Thomé das Letras / MG",
+    'resumo');
 class _ProdutosState extends State<Produtos> {
-  String foto = "assets/images/evento.jpg";
+
 
   final ScrollController _scrollController = ScrollController();
   late PageController pageCtrl = PageController();
   List<Widget> imageList = [
-    Image.asset("assets/images/lugar1.jpeg"),
+    Image.asset(evento.foto),
     Image.asset("assets/images/lugar2.jpeg")
   ];
 

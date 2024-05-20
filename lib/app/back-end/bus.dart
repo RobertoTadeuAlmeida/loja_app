@@ -5,7 +5,7 @@ class Bus {
   String foto;
   int quantAcentos;
   bool arCondicionado;
-  bool acentosLivres;
+  int acentosLivres;
 
   Bus(this.name, this.motorista, this.modelo, this.foto, this.quantAcentos,
       this.arCondicionado, this.acentosLivres);

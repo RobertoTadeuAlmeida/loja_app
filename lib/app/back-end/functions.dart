@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loja_app/app/back-end/bus.dart';
+import 'package:loja_app/app/back-end/evento.dart';
 import 'package:loja_app/app/screens/transport.dart';
 import 'package:path/path.dart';
 
@@ -19,7 +21,11 @@ class Functions {
     ;
   }
 
-  void eventOrBus (String image){
-
+  void eventOrBus(Evento evento, Bus bus, context) {
+    if (Evento != evento) {
+      Navigator.of(context).pushNamed('/p');
+    } else {
+      Navigator.of(context).pushNamed('/t');
+    }
   }
 }

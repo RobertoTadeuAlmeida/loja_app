@@ -1,4 +1,4 @@
-class evento {
+class Evento {
   String name;
   String foto;
   int dataIni;
@@ -7,6 +7,6 @@ class evento {
   String local;
   String resumo;
 
-  evento(this.name, this.foto, this.dataIni, this.dataFin, this.atracoes, this.local,
+  Evento(this.name, this.foto, this.dataIni, this.dataFin, this.atracoes, this.local,
       this.resumo);
 }
