@@ -64,8 +64,8 @@ class _Home_screenState extends State<Home_screen> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.bus_alert),
-              label: 'Reservados',
+              icon: Icon(Icons.bus_alert_outlined),
+              label: 'Transporte',
             ),
           ],
         ),

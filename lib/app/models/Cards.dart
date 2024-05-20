@@ -16,7 +16,7 @@ class Cards extends StatefulWidget {
 
 class _CardsState extends State<Cards> {
   bool toque = false;
-  late bool textButon = false;
+  late String textButton = 'Eu vou';
 
   double tamanho = 150;
 
@@ -42,8 +42,8 @@ class _CardsState extends State<Cards> {
                 child: FloatingActionButton.extended(
                   heroTag: 'evento',
                   onPressed: () {
-                    Functions functions = Functions();
-                    functions.verificPag(widget.image, textButon, context);
+                    final Functions functions = Functions();
+                    functions.verificPag(widget.image, textButton, context);
                     // final Transport transporte = Transport();
                     // print('pagamento ${transporte.pagamento}');
                     //
@@ -58,7 +58,7 @@ class _CardsState extends State<Cards> {
                     // }
                     // ;
                   },
-                  label: Text(textButon ? 'Nao vou mais' : 'Eu vou!'),
+                  label: Text(textButton),
                 ),
               )),
           AnimatedContainer(

@@ -14,6 +14,7 @@ class _State extends State<ProdutoList> {
     return ListView(
       scrollDirection: Axis.vertical,
       children: [
+        Cards('evento', 'assets/images/evento.jpg')
 
       ],
     );
