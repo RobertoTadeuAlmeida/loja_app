@@ -61,7 +61,7 @@
         <entry key="flutter">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../../../../../src/flutter/packages/flutter/lib" />
+              <option value="$PROJECT_DIR$/../../../../../../src/flutter/packages/flutter/lib" />
             </list>
           </value>
         </entry>
@@ -89,7 +89,7 @@
         <entry key="flutter_test">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../../../../../src/flutter/packages/flutter_test/lib" />
+              <option value="$PROJECT_DIR$/../../../../../../src/flutter/packages/flutter_test/lib" />
             </list>
           </value>
         </entry>
@@ -97,6 +97,13 @@
           <value>
             <list>
               <option value="$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/lints-2.1.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="loja_app">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../lib" />
             </list>
           </value>
         </entry>
@@ -138,7 +145,7 @@
         <entry key="sky_engine">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../../../../../src/flutter/bin/cache/pkg/sky_engine/lib" />
+              <option value="$PROJECT_DIR$/../../../../../../src/flutter/bin/cache/pkg/sky_engine/lib" />
             </list>
           </value>
         </entry>
@@ -250,9 +257,10 @@
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.6.0/lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4/lib" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/web-0.1.4-beta/lib" />
-      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/bin/cache/pkg/sky_engine/lib" />
-      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/packages/flutter/lib" />
-      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/packages/flutter_test/lib" />
+      <root url="file://$PROJECT_DIR$/../lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../../src/flutter/bin/cache/pkg/sky_engine/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../../src/flutter/packages/flutter/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../../src/flutter/packages/flutter_test/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

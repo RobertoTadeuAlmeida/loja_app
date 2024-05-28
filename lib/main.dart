@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:loja_app/app/screens/Produtos.dart';
 import 'package:loja_app/app/screens/TransportList.dart';
 import 'package:loja_app/app/screens/home_page.dart';
+import 'package:loja_app/app/screens/loguinPage.dart';
 import 'package:loja_app/app/screens/transport.dart';
 import 'app/models/Cards.dart';
 import 'app/screens/AppWidget.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return AppWidget();
+    return LoguinPage();
   }
 }
 
