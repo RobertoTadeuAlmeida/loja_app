@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 ThemeData tema = ThemeData(
+  elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+    backgroundColor: MaterialStatePropertyAll(Colors.black),
+  )),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
     backgroundColor: Colors.blueGrey,
   ),

@@ -4,6 +4,7 @@ import 'package:loja_app/app/models/tema.dart';
 import 'package:loja_app/app/screens/Produtos.dart';
 import 'package:loja_app/app/screens/TransportList.dart';
 import 'package:loja_app/app/screens/home_page.dart';
+import 'package:loja_app/app/screens/loguinPage.dart';
 import 'package:loja_app/app/screens/produtoList.dart';
 import 'package:loja_app/app/screens/transport.dart';
 
@@ -16,8 +17,9 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: tema,
-      initialRoute: '/home',
+      initialRoute: '/loguin',
       routes: {
+        '/loguin':(context) => LoguinPage(),
         '/home': (context) => Home_screen(),
         '/p': (context) => Produtos(),
         '/tl': (context) => TransportList(),
