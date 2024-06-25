@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loja_app/app/models/authentcation_input_decoration.dart';
+import 'package:path/path.dart';
 
 class LoguinPage extends StatefulWidget {
   const LoguinPage({super.key});
@@ -9,6 +10,7 @@ class LoguinPage extends StatefulWidget {
 }
 
 class _LoguinPageState extends State<LoguinPage> {
+  bool criaConta = true;
 
   final _formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
@@ -51,10 +53,40 @@ class _LoguinPageState extends State<LoguinPage> {
                   style: new TextStyle(color: Colors.black, fontSize: 20),
                   decoration: getAuthenticationInputDecoration('Senha'),
                 ),
+                Visibility(
+                    visible: criaConta,
+                    child: Column(
+                      children: [
+                        Divider(),
+                        TextFormField(
+                            controller: _passwordController,
+                            obscureText: true,
+                            style: new TextStyle(
+                                color: Colors.black, fontSize: 20),
+                            decoration: getAuthenticationInputDecoration(
+                                'Confirme sua senha')),
+                        Divider(),
+                        TextFormField(
+                          style:
+                              new TextStyle(color: Colors.black, fontSize: 20),
+                          decoration: getAuthenticationInputDecoration('Nome'),
+                        )
+                      ],
+                    )),
                 Divider(),
-                ElevatedButton(onPressed: () {
-                  loguinPageButtonClick();
-                }, child: Text("Entrar"))
+                ElevatedButton(
+                    onPressed: () {
+                      loguinPageButtonClick();
+                    },
+                    child: Text("Entrar")),
+                TextButton(
+                    onPressed: () {
+                      setState(() {
+                        criaConta = !criaConta;
+                      });
+                    },
+                    child: Text(style:TextStyle(color: Colors.black,fontSize: 16),
+                        (!criaConta) ? "Criar conta aqui!" : "Fazer loguin"))
               ],
             ),
           ),
@@ -66,7 +98,7 @@ class _LoguinPageState extends State<LoguinPage> {
   loguinPageButtonClick() {
     if (_formKey.currentState!.validate()) {
       print("Form valido");
-    }else {
+    } else {
       print("Form invalido");
     }
   }
